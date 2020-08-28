@@ -22,7 +22,7 @@ export class GoogleApiService {
 
     const { distance, duration } = (await googleMapsClient.directions(params)).data.routes[0].legs[0]
     console.log({ distance, duration })
-    return { distance, duration }
+    return { distance: distance.value, duration: duration.value }
   }
 
 }
