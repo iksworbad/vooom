@@ -19,9 +19,8 @@ export class GoogleApiService {
         key: apiKey
       }
     } as DirectionsRequest;
-
+    
     const { distance, duration } = (await googleMapsClient.directions(params)).data.routes[0].legs[0]
-    console.log({ distance, duration })
     return { distance: distance.value, duration: duration.value }
   }
 

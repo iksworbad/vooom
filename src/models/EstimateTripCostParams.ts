@@ -1,5 +1,5 @@
 import { Geo } from "./geo";
-import { Car, Motor, Scooter } from "./vehicals";
+import { Car, Motor, Scooter } from "./Vehicals";
 
 export interface EstimateTripCostParams {
   start: Geo,

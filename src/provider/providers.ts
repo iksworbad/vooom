@@ -1,4 +1,4 @@
-import { Car, Motor, Scooter } from "../models/vehicals"
+import { Car, Motor, Scooter } from "../models/Vehicals"
 import { PriceInfo } from "../models/priceInfo"
 
 export const PricesProviderOne = new Map<Car | Motor, PriceInfo>()
