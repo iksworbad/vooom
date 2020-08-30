@@ -22,8 +22,34 @@ describe('ProviderServiceService', () => {
     it('should throw an error for to big distance', () => {
       expect(() => service.estimateCost(300000, 60, Car.Yaris)).toThrowError('Distance is to big for this vehicle')
     })
+    //
 
-    
+    describe('', () => {
+      [
+        { vehicle: Motor.Yamaha, distance: 1000, time: 60, result: 45 },
+        { vehicle: Car.Yaris, distance: 1000, time: 60, result: 160 },
+        { vehicle: Car.Yaris, distance: 10000, time: 120, result: 940 },
+        { vehicle: Car.Yaris, distance: 0, time: 0, result: 20 },
+        { vehicle: Car.NissanLeafElectricAutomatic, distance: 0, time: 0, result: 0 },
+        { vehicle: Car.NissanLeafElectricAutomatic, distance: 1000, time: 60, result: 175 },
+        { vehicle: Motor.Yamaha, distance: 25000, time: 60, result: 750 },
+        { vehicle: Motor.Yamaha, distance: 10000, time: 60, result: 450 },
+        { vehicle: Scooter.ScooterOne, distance: 0, time: 0, result: 400 },
+        { vehicle: Scooter.ScooterOne, distance: 332492, time: 14033, result: 6717 },
+
+      ].forEach(data => {
+        it(`shound return for vehicle: ${data.vehicle}, distance: ${data.distance}, time: ${data.time} cents equal ${data.result}`, () => {
+          const cost = service.estimateCost(data.distance, data.time, data.vehicle)
+          expect(cost).toEqual(data.result)
+        })
+      });
+    })
+
+
+    it('should return cost in ', () => {
+      expect(service.estimateCost(1000, 60, Car.Yaris)).toEqual(160)
+    })
+
   })
 
   describe('sumCosts', () => {

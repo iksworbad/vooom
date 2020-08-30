@@ -1,9 +1,15 @@
 import { Geo } from "./geo";
 import { Car, Motor, Scooter } from "./Vehicals";
+import { IsNotEmpty } from 'class-validator';
 
-export interface EstimateTripCostParams {
-  start: Geo,
-  finish: Geo,
+export class EstimateTripCostParams {
+  @IsNotEmpty()
+  start: Geo;
+
+  @IsNotEmpty()
+  finish: Geo;
+
+  @IsNotEmpty()
   vehicle: Car | Motor | Scooter
 }
 
