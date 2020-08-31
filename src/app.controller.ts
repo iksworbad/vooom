@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Body, Put } from '@nestjs/common';
 import { AppService } from './app.service';
 import { EstimateTripCostParams, EstimateTripCostResult } from './models/EstimateTripCostParams';
 
@@ -7,7 +7,7 @@ import { EstimateTripCostParams, EstimateTripCostResult } from './models/Estimat
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  @Post('/estimateTripCost')
+  @Put('/estimateTripCost')
   async estimateTripCost(@Body() data: EstimateTripCostParams): Promise<EstimateTripCostResult> {
     return await this.appService.estimateTripCost(data);
   }
