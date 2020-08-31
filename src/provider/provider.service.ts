@@ -1,6 +1,6 @@
 import { Injectable, HttpStatus, HttpException } from '@nestjs/common';
 import { Car, Motor, Scooter } from '../models/Vehicals';
-import { stringOfenumValue } from '../utils/stringOfEnum';
+import { stringOfEnumValue } from '../utils/stringOfEnum';
 import { PricesProviderOne, PricesProviderTwo } from './providers';
 import { PriceInfo } from 'src/models/priceInfo';
 
@@ -17,7 +17,7 @@ export class ProviderService {
 
   getPricing(vehicle: Car | Motor | Scooter, distance: number) {
     let pricing
-    if (stringOfenumValue(Car, vehicle) || (stringOfenumValue(Motor, vehicle) && distance > 20000))
+    if (stringOfEnumValue(Car, vehicle) || (stringOfEnumValue(Motor, vehicle) && distance > 20000))
       pricing = PricesProviderOne.get(vehicle as Car | Motor)
     else
       pricing = PricesProviderTwo.get(vehicle as Motor | Scooter)

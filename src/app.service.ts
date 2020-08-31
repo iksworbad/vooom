@@ -4,14 +4,14 @@ import { ProviderService } from './provider/provider.service';
 
 import { EstimateTripCostParams, EstimateTripCostResult } from './models/EstimateTripCostParams';
 import { AllVehicals } from './models/Vehicals';
-import { stringOfenumValue } from './utils/stringOfEnum';
+import { stringOfEnumValue } from './utils/stringOfEnum';
 
 @Injectable()
 export class AppService {
   constructor(private googleApiService: GoogleApiService, private providerService: ProviderService) { }
 
   async estimateTripCost({ start, finish, vehicle }: EstimateTripCostParams): Promise<EstimateTripCostResult> {
-    if(!stringOfenumValue(AllVehicals, vehicle)){
+    if(!stringOfEnumValue(AllVehicals, vehicle)){
       throw new HttpException('This vehical is not supported', HttpStatus.BAD_REQUEST);
     }
 
