@@ -11,4 +11,4 @@ export enum Car {
   NissanLeafElectricAutomatic = 'nissan',
 }
 
-export const AllVehicals =  Object.assign({}, Motor, Scooter, Car)
+export const AllVehicles =  Object.assign({}, Motor, Scooter, Car)

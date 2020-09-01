@@ -1,5 +1,5 @@
 import { Geo } from "./geo";
-import { Car, Motor, Scooter } from "./Vehicals";
+import { Car, Motor, Scooter } from "./Vehicles";
 import { IsNotEmpty } from 'class-validator';
 
 export class EstimateTripCostParams {

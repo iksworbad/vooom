@@ -68,7 +68,7 @@ describe('AppController (e2e)', () => {
         vehicle: "test"
     })
       .expect(400)
-      .expect({ statusCode: 400, message: 'This vehical is not supported' });
+      .expect({ statusCode: 400, message: 'This vehicle is not supported' });
   });
 
   it('/estimateTripCost (GET) return data', () => {

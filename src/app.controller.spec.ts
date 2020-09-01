@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { GoogleApiService } from './google-api/google-api.service';
 import { ProviderService } from './provider/provider.service';
 import { ConfigModule } from '@nestjs/config';
-import { Scooter, Car } from './models/Vehicals';
+import { Scooter, Car } from './models/Vehicles';
 
 jest.mock('@googlemaps/google-maps-services-js', () => {
   return {
@@ -96,7 +96,7 @@ describe('AppController', () => {
         vehicle: '' as Car
       })
 
-      expect(async () => await res).rejects.toThrowError('This vehical is not supported')
+      expect(async () => await res).rejects.toThrowError('This vehicle is not supported')
     })
   })
 });

@@ -1,5 +1,5 @@
 import { Injectable, HttpStatus, HttpException } from '@nestjs/common';
-import { Car, Motor, Scooter } from '../models/Vehicals';
+import { Car, Motor, Scooter } from '../models/Vehicles';
 import { stringOfEnumValue } from '../utils/stringOfEnum';
 import { PricesProviderOne, PricesProviderTwo } from './providers';
 import { PriceInfo } from 'src/models/priceInfo';

@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { ProviderService } from './provider.service';
-import { Car, Motor, Scooter } from './../models/Vehicals';
+import { Car, Motor, Scooter } from './../models/Vehicles';
 import { PricesProviderOne, PricesProviderTwo } from './providers';
 
 describe('ProviderServiceService', () => {
